@@ -7,6 +7,7 @@
 // Variables
 $baseFontSize: 16px;
 $baseLineHeight: 1;
+$baseWeight: 300;
 
 // Google Fonts
 // @import url(http://fonts.googleapis.com/css?family=Open+Sans);
@@ -20,16 +21,17 @@ $helvetica: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Hel
 
 // Headers
 $headers: 
-  (h-01, 24px, $baseLineHeight, $helvetica),
-  (h-02, 18px, $baseLineHeight, $helvetica);
+  (h-01, 24px, $baseWeight, $baseLineHeight, $helvetica),
+  (h-02, 18px, $baseWeight, $baseLineHeight, $helvetica);
 
 .heading {
   color: $colorMain;
-  @each $header, $fontSize, $lineHeight, $fontName in $headers {
+  @each $header, $fontSize, $fontWeight, $lineHeight, $fontName in $headers {
     &.#{$header} {
       font: {
         family: $fontName;
         size: $fontSize;
+        weight: $fontWeight;
       }
       line-height: $lineHeight;
     }
@@ -38,14 +40,15 @@ $headers:
 
 // Copy
 $copies: 
-  (copy-01, 14px, $baseLineHeight, $helvetica),
-  (copy-03, 11px, $baseLineHeight, $helvetica);
+  (copy-01, 14px, $baseWeight, $baseLineHeight, $helvetica),
+  (copy-03, 11px, $baseWeight, $baseLineHeight, $helvetica);
 
-@each $copy, $fontSize, $lineHeight, $fontName in $copies {
+@each $copy, $fontSize, $fontWeight, $lineHeight, $fontName in $copies {
   .#{$copy} {
     font: {
       family: $fontName;
       size: $fontSize;
+      weight: $fontWeight;
     }
     line-height: $lineHeight;
   }
